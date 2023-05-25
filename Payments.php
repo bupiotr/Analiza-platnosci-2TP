@@ -74,6 +74,13 @@ class Payments {
 	
 	public function getSqlComplited3($name, $lastname) {
 		if (is_null($name) || is_null($lastname)) {return '';}
+		$conn = $this->getConnection();
+		$result = $conn->query($this->sqlComplited3($name, $lastname));
+		$conn->close();
+		while($row = $result->fetch_array()){
+			$payments = $row[2];
+		}
+		return $payments;
 		
 		
 		/* zwrócenie zawartości zapytania $this->sqlComplited3 w postaci niesformatowanej (zwróc uwagę, 
