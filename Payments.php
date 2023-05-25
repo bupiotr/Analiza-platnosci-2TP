@@ -23,8 +23,7 @@ class Payments {
 		if(empty($name) && empty($lastname)){
 			$sqlComplited2 = $this->sql2. " GROUP BY payments.customerNumber ORDER BY `Suma płatności`";
 		} else {
-			/* lista płatności z pola $this->sql2, dodane filtrowanie według contactFirstName, contactLastName, grupowanie po customerNumber,
-			 sortowanie po polu `Suma płatności`*/
+			$sqlComplited2 = $this->sql2. " WHERE contactFirstName = '".$name."'AND contactLastName = '".$lastname."' ORDER BY `Suma płatności` GROUP BY customerNumber ";
 		}
 		return $sqlComplited2;
 	}
