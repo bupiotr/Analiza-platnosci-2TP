@@ -36,15 +36,25 @@
 				<div class="prawy">
 					<h3 class="titles">Zamówienia</h3>
 					<hr>
-					
+					<?php
+					echo $payments->getSqlComplited1($firstName, $lastName);
+					?>
 				</div>
 			</div>
 			<div class="payments">
 				<div class="lewy">
 					<h3 class="titles">Analiza płatności</h3>
 					<hr>
-					<p>Wartość towarów: </p>
-					<p>Kwota płatnosci: </p>
+					<p>Wartość towarów: 
+						 <?php
+					echo $payments->getSqlComplited3($firstName, $lastName);
+					?>
+					</p>
+					<p>Kwota płatnosci:
+						 <?php
+					echo $payments->getSqlComplited4($firstName, $lastName);
+					?>
+					</p>
 				</div>
 				<div class="prawy">
 					<h3 class="titles">Płatności</h3>
